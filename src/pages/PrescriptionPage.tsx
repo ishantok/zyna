@@ -37,10 +37,10 @@ export default function PrescriptionPage() {
     // Fetch the access token from session storage
     const accessToken = sessionStorage.getItem("access_token");
   
-    // if (!accessToken) {
-    //   alert("No access token found. Please log in.");
-    //   return;
-    // }
+    if (!accessToken) {
+      alert("No access token found. Please log in.");
+      return;
+    }
   
     try {
       const response = await fetch('https://api-dev.zynapte.com/api/v1/prescriptions', {
